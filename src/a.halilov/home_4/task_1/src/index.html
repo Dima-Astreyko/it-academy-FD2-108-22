@@ -15,33 +15,27 @@
         </div>
         <div class="grid">
             <div class="grid_elem">top</div>
-            <div class="grid_elem"> <input type="number" class="input"  value="20">   </div>
+            <div class="grid_elem"> <input type="number" class="input"  value="20" max="380" id="top">   </div>
             <div class="grid_elem">px</div>
             <div class="grid_elem">left</div>
-            <div class="grid_elem"> <input type="number" class="input" value="20">  </div>
+            <div class="grid_elem"> <input type="number" class="input" value="20" max="1180" id="left">  </div>
             <div class="grid_elem">px</div>
         </div>
         <div class="button_group">
-            <button class="button"  onclick="generate.circle()"> круг </button>
-            <button class="button"  onclick="generate.quadrate()">квадрат</button>
-            <button class="button"  onclick="generate.triangle()">треугольник</button>
+            <button class="button" onclick="circle()"> круг </button>
+            <button class="button" onclick="quadrate()"> квадрат </button>
+            <button class="button" onclick="triangle()"> треугольник </button>
         </div>
-        <select name="color" class="color">
-            <optgroup label="Сolor">
-                <option value="1" style="background-color: blue;">Синий</option>
-                <option value="2" style="background-color: rgb(168, 168, 228)"> Фиолетовый </option>
-                <option value="3" style="background-color: rgb(255, 0, 0); color: white;">Красный</option>
-                <option value="4" style="background-color: rgb(0, 0, 0); color: white;">Черный</option>
-                <option value="5" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Белый</option>
-                <option value="6" style="background-color: rgb(140, 93, 171); color: white;">Какой то еще</option>
-                
-            </optgroup>
-        </select>
-    </div>
+        <form action="color" class="color">
+            <p>укажите цвет:
+                <input type="color" name="bg" value="#ff0000" id="addColor">
+            </p>
+        </form>
 
-    <div class="container">
-        <div class="tri" id="triangle"></div>
-        <div class="q" id="circle"></div>
+
+
+    <div class="container" id="container">
+        
     </div>
 
 
