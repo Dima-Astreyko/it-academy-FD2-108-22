@@ -1,3 +1,4 @@
+"use strict";
 
 let addColor = document.getElementById("addColor");
 let topLocation = document.getElementById("top");
@@ -13,12 +14,9 @@ function circle(){
     circle.style.backgroundColor = addColor.value;
     circle.style.top = topLocation.value + "px";
     circle.style.left = leftLocation.value + "px";
-    let count = 0;
-    count++;
-    circle.innerHTML = count;
-
-
-
+    let clickCircle = 0;
+    clickCircle++;
+    circle.innerHTML = clickCircle;
     
 }
 
