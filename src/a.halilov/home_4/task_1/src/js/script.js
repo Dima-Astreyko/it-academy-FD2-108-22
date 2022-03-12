@@ -7,10 +7,7 @@ let clickCircle = 0;
 let clickQuadrate = 0;
 let clickTriangle = 0;
 
-
-
 function circle(){
-    
     let container = document.getElementById("container");
     let circle = document.createElement('div');
     container.append(circle);
@@ -18,9 +15,10 @@ function circle(){
     circle.style.backgroundColor = addColor.value;
     circle.style.top = topLocation.value + "px";
     circle.style.left = leftLocation.value + "px";
+    let p = document.createElement("p");
+    circle.append(p);
     clickCircle++;
-    circle.innerHTML = clickCircle;
-    
+    p.innerHTML = clickCircle;
 }
 
 function quadrate(){
