@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .config {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .figures {
+        display: flex;
+        justify-content: space-evenly;
+        width: 25%;
+      }
+
+      .main {
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding-right: 40px;
+        border: 1px solid orange;
+        width: 450px;
+        height: 650px;
+      }
+
+      #square {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <container class="header">
+      <div class="config">
+        <span
+          >top, px <input id="top" type="number" min="0" max="600" value="0"
+        /></span>
+        <span
+          >left, px <input id="left" type="number" min="0" max="440" value="0"
+        /></span>
+        <span>color: <input id="color" type="color" /></span>
+        <span>Область для фигур:</span>
+      </div>
+      <div class="figures">
+        <button onclick="addSquare()">квадрат</button>
+        <button onclick="addTriangle()">треугольник</button>
+        <button onclick="addCircle()">круг</button>
+      </div>
+    </container>
+    <container class="main" id="insertFigure"> </container>
+
+    <script>
+      const insertFigure = document.getElementById('insertFigure');
+      let countSquare = 1;
+      let countTriangle = 1;
+      let countCircle = 1;
+
+      function addSquare() {
+        const div = document.createElement('div');
+        insertFigure.append(div);
+        const square = new Square(div);
+        if (
+          document.getElementById('left').value <= 440 &&
+          document.getElementById('top').value <= 600
+        ) {
+          square.generate();
+          div.textContent = countSquare;
+          countSquare++;
+        } else {
+          alert('Вы вышли за область! Длинна 600px, ширина 440px');
+        }
+      }
+
+      function addTriangle() {
+        const div = document.createElement('div');
+        insertFigure.append(div);
+        const triangle = new Triangle(div);
+        if (
+          document.getElementById('left').value <= 440 &&
+          document.getElementById('top').value <= 600
+        ) {
+          triangle.generate();
+          div.textContent = countTriangle;
+          countTriangle++;
+        } else {
+          alert('Вы вышли за область! Длинна 600px, ширина 440px');
+        }
+      }
+
+      function addCircle() {
+        const div = document.createElement('div');
+        insertFigure.append(div);
+        const circle = new Circle(div);
+        if (
+          document.getElementById('left').value <= 440 &&
+          document.getElementById('top').value <= 600
+        ) {
+          circle.generate();
+          div.textContent = countCircle;
+          countCircle++;
+        } else {
+          alert('Вы вышли за область! Длинна 600px, ширина 440px');
+        }
+      }
+
+      class Figure {
+        constructor(element) {
+          this.element = element;
+          this.left;
+          this.top;
+          this.color;
+        }
+        settings() {
+          this.left = document.getElementById('left').value;
+          this.top = document.getElementById('top').value;
+          this.color = document.getElementById('color').value;
+          this.element.style.display = 'flex';
+          this.element.style.justifyContent = 'center';
+          this.element.style.alignItems = 'center';
+          this.element.style.color = 'White';
+          this.element.style.fontSize = '30px';
+          this.element.style.marginLeft = this.left + 'px';
+          this.element.style.marginTop = this.top + 'px';
+          this.element.style.background = this.color;
+        }
+      }
+
+      class Square extends Figure {
+        generate() {
+          this.element.style.width = '50px';
+          this.element.style.height = '50px';
+          this.element.style.position = 'absolute';
+          super.settings();
+        }
+      }
+
+      class Triangle extends Figure {
+        settings() {
+          this.left = document.getElementById('left').value;
+          this.top = document.getElementById('top').value;
+          this.color = document.getElementById('color').value;
+          this.element.style.display = 'flex';
+          this.element.style.justifyContent = 'center';
+          this.element.style.alignItems = 'bottom';
+          this.element.style.color = 'White';
+          this.element.style.fontSize = '30px';
+          this.element.style.marginLeft = this.left + 'px';
+          this.element.style.marginTop = this.top + 'px';
+          this.element.style.borderBottom = '50px solid' + this.color;
+        }
+        generate() {
+          this.element.style.width = '0';
+          this.element.style.height = '0';
+          this.element.style.borderLeft = '25px solid transparent';
+          this.element.style.borderRight = '25px solid transparent';
+          this.element.style.position = 'absolute';
+          this.settings();
+        }
+      }
+
+      class Circle extends Figure {
+        generate() {
+          this.element.style.width = '50px';
+          this.element.style.height = '50px';
+          this.element.style.borderRadius = '50px';
+          this.element.style.position = 'absolute';
+          super.settings();
+        }
+      }
+    </script>
+  </body>
+</html>
