@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figures</title>
+    <link rel="stylesheet" href="./figures.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-main">
+      <button id="clean" onclick="cleanArea()"><span> CLEAN</span></button>
+      <div class="navigation">
+        <div class="container__for-parametrs">
+          <div class="flex-row topInput">
+            <span>top, px:</span>
+            <input id="top" type="number" min="0" max="425" />
+          </div>
+
+          <div class="flex-row">
+            <span>left, px:</span>
+            <input id="left" type="number" min="0" max="1025" />
+          </div>
+
+          <div class="flex-row">
+            <span>color:</span>
+            <input id="color" type="color" />
+          </div>
+        </div>
+
+        <div class="container__for-buttons">
+          <button onclick="createSquare()">
+            <span class="material-icons-outlined"> square </span>
+          </button>
+          <button onclick="createTriangle()">
+            <span class="material-icons-outlined"> change_history </span>
+          </button>
+          <button onclick="createCircle()">
+            <span class="material-icons-outlined"> circle </span>
+          </button>
+        </div>
+      </div>
+
+      <h4>
+        <span class="material-icons-outlined neonArrows"> arrow_downward </span>
+        область для фигур
+        <span class="material-icons-outlined neonArrows"> arrow_downward </span>
+      </h4>
+      <div id="container__for-figures" class="container__for-figures"></div>
+
+      <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="./figures.js"></script>
+  </body>
+</html>
