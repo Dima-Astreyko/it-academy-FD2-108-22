@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Syne Mono', monospace;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+}
+.inputs > div {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.span, .inputs > input {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.buttons_type_of_figures {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.buttons_type_of_figures > button {
+    width: 27%;
+    height: 60%;
+    border-radius: 20px;
+    margin-left: 23px;
+    cursor: pointer;
+}
+.material-icons-outlined {
+    font-family: "Material Icons";
+    padding: 0 5px;
+    font-size: 25px;
+}
+.field_for_figures {
+    margin: 20px;
+    width: 600px;
+    height: 600px;
+    border: solid 3px darkseagreen;
+    border-radius: 5px;
+    background-color: oldlace;
+    position: relative;
+}
+.figure {
+    width: 50px;
+	height: 50px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+    z-index: 2;
+}
+.circle {
+    border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.triangle-up {
+    width: 0;
+	height: 0;
+	border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
+	position: absolute;
+	z-index: -1;
+}
+
+.clean_field {
+    margin: 20px;
+}
+.remove {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}

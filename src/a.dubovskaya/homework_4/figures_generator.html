@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="figures_generator.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Syne+Mono&display=swap" rel="stylesheet">
+    <title>figures_generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="inputs">
+                <div><span class="span">color</span><input type="color" id="color_of_figure"></div>
+                <div><span class="span">Top, px</span><input type="number" min="0" max="550" id="top_position" placeholder="top"></div>
+                <div><span class="span">Left, px</span><input type="number" min="0" max="750" id="left_position" placeholder="left"></div>
+            </div>
+            <div class="buttons_type_of_figures">
+                <button class="square_generate"><span class="material-icons-outlined"> square </span></button>
+                <button class="triangle_generate"><span class="material-icons-outlined"> change_history </span></button>
+                <button class="circle_generate"><span class="material-icons-outlined"> lens </span></button>
+            </div>
+
+        </div>
+        <div class="field_for_figures">
+
+        </div>
+        <div class="clean_field">
+            <button class="remove">Clean field</button>
+
+        </div>
+    </div>
+    <script src="figures_generator.js"></script>
+</body>
+</html>
