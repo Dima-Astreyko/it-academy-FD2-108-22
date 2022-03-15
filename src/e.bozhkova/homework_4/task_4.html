@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task figure4</title>
+	<link rel="stylesheet" type="text/css" href="task_4.css">
+	<script type="text/javascript" src="task_4.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="container-settings">
+			<div>
+				<b>left,px</b>
+				<input type="number" id="left" required min='0' value='0' onkeypress="return event.charCode > 47" />
+			</div>
+			<div>
+				<b>top,px</b>
+				<input type="number" id="top" required min='0' value='0' onkeypress="return event.charCode > 47" />
+			</div>
+			<div>
+				<b>color</b>
+				<input type="color" id="color" value="#000000" />
+			</div>
+		</div>
+		<div class="container-buttons">
+			<button onclick="createSquare()">Square</button>
+			<button onclick="createTriangle()">Triangle</button>
+			<button onclick="createCircle()">Circle</button>
+		</div>
+		<div id='figures' class='container-figures'></div>
+	</div>
+
+
+	<script>
+		let containerFigures = document.getElementById("figures");
+		
+
+		function createSquare() {
+			const left = document.getElementById('left').value;
+			const top = document.getElementById('top').value;
+			const color = document.getElementById('color').value;
+
+		    const square = new Square(left, top, color, containerFigures);
+		    square.createElement();
+		}
+
+		function createTriangle() {
+			const left = document.getElementById('left').value;
+			const top = document.getElementById('top').value;
+			const color = document.getElementById('color').value;
+			
+		    const triangle = new Triangle(left, top, color, containerFigures);
+		    triangle.createElement();
+		}
+
+		function createCircle() {
+			const left = document.getElementById('left').value;
+			const top = document.getElementById('top').value;
+			const color = document.getElementById('color').value;
+			
+		    const circle = new Circle(left, top, color, containerFigures);
+		    circle.createElement();
+		}
+	</script>
+</body>
+</html>
