@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>Нажми меня</button>
+<button onclick="deleteListener()">Удалить функцию</button>
+<script>
+  const button = document.body.firstElementChild;
+  const onClick = (event) => myfunc(event);
+  button.addEventListener('click', onClick);
+  button.addEventListener('click', myfunc);
+
+  function myfunc(event) {
+    console.log('click2', event);
+  }
+
+  button.onclick = (event) => {
+    console.log(event);
+  };
+
+  function deleteListener(callback) {
+    button.onclick = null;
+    button.removeEventListener('click', onClick);
+    button.removeEventListener('click', myfunc);
+  }
+
+  function myfunc2() {
+    console.log('click3');
+  }
+</script>
+
+</body>
+</html>
