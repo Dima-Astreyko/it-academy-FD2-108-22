@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+
+<form onclick="onClick(event)">FORM
+    <div onclick="onClick(event)">DIV
+        <p data-stop="true">P1</p>
+        <p>P2</p>
+        <p data-stop="true">P3</p>
+        <p>P4</p>
+    </div>
+</form>
+
+<script>
+  function onClick(event) {
+    console.log(event.target.tagName, event.currentTarget.tagName);
+    if (event.target.dataset.stop) {
+      event.stopPropagation();
+    }
+  }
+</script>
+</body>
+</html>
