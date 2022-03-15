@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .notification-container {
+            position: fixed;
+            top: 0;
+            width: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .notification {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            animation: 250ms ease-in opacity;
+        }
+
+        @keyframes opacity {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .notification.shown {
+            opacity: 1;
+        }
+
+        .notification.error {
+            background: indianred;
+        }
+
+        .notification.info {
+            background: indigo;
+        }
+
+        .notification.success {
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<button onclick="showErrorNotification('Что-то пошло не так')">error</button>
+<button onclick="showSuccessNotification('Все хорошо')">success</button>
+<button onclick="showInfoNotification('Просто информация')">info</button>
+
+<div id="notificationContainer" class="notification-container">
+
+</div>
+</body>
+
+<script>
+  const notificationContainerElement = document.querySelector('#notificationContainer');
+
+  function showErrorNotification(message) {
+    showNotification(message, 'error');
+  }
+
+  function showInfoNotification(message) {
+    showNotification(message, 'info');
+  }
+
+  function showSuccessNotification(message) {
+    showNotification(message, 'success');
+  }
+
+  function showNotification(message, type) {
+    const notificationElement = document.createElement('div');
+    notificationElement.classList.add('notification', type);
+    notificationElement.innerHTML = `<span>${message}</span>`;
+    notificationContainerElement.append(notificationElement);
+
+    const button = document.createElement('button');
+    button.textContent = 'x';
+    notificationElement.append(button);
+    button.onclick = () => notificationElement.remove();
+    // button.addEventListener('click', () => notificationElement.remove());
+
+    setTimeout(() => notificationElement.remove(), 20000);
+  }
+</script>
+</html>
