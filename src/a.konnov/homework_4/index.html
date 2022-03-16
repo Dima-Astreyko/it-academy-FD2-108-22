@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/stylesheet.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="button_group">
+            <p>Top - px;<input id="top" type="number" size="3" name="margin-top" min="0" max="450" value="0"></p>
+            <p>Left - px;<input id="left" type="number" size="3" name="margin-left" min="0" max="750" value="0"></p>
+            <p>Выбор цвета<input id="color" type="color" id="color" name="color" value="#000000"></p>
+            <button onclick="createFigure('square')">КВАДРАТ</button>
+            <button onclick="createFigure('circle')">КРУГ</button>
+            <button onclick="createFigure('triangle')">ТРЕУГОЛЬНИК</button>
+            <button onclick="figure.reset()">RESET</button>
+    </div>
+    <div id="container" class="container"></div>
+</body>
+<script src="./js/script.js"></script>
+</html>
