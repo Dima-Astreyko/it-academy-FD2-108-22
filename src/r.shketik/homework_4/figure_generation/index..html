@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Figure generation</title>
+</head>
+<body>
+
+  <header class="header">
+    
+      <div class="header__input">
+        <div class="input__top">
+          <span>Top, px: </span><input class="inputTop" type="number" min="0" value="0">
+        </div>
+
+        <div class="input__left">
+          <span>Left, px: </span><input class="inputLeft" type="number" min="0" value="0">
+        </div>
+
+        <div class="input__color">
+          <span>Color: </span><input type="color" class="color"/>
+        </div>
+      </div>
+
+      
+        <button class="figure__btn" onclick="addSquare()">Квадрат</button>
+        <button class="figure__btn" onclick="addTriangle()">Треугольник</button>
+        <button class="figure__btn" onclick="addCircle()">Круг</button>
+      
+      
+  </header>
+
+  <section class="section">
+    <p>Область для фигур:</p>
+    <div class="display" id="display"></div>
+  </section>
+  
+
+  <script src="index.js"></script>
+  
+</body>
+</html>
